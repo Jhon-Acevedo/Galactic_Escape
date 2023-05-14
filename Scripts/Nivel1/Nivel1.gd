@@ -1,11 +1,12 @@
 extends Node2D
 
 var width = 9000
+var width_init = 4000
 var hight = 1080
 var location = Vector2()
 
 # Cantidad de powerUp en el nivel 1
-var amount_powerUp = 5
+var amount_powerUp = 25
 
 # Instancias de los powerUps
 var powerup_heart = preload("res://Scenes/PowerUps/FullVida.tscn").instance()
@@ -16,8 +17,12 @@ var _powerups = {
 	"heart": {"Probability":0.2},
 	"shot_triple": {"Probability":0.5},
 }
-	
 
+# Funcion para crear la cantidad de powerups en el nivel
+# amount_powerUp: Cantidad de power que se van a crear
+# random_num: Número pseudoaletorio distribución normal 
+# create_powerUpHeart(): Función para crear powerUp de vidas
+# create_powerUpShoot(): Función para crear powerUp de disparo triple
 func _ready():
 	randomize()
 	for i in range(amount_powerUp):
@@ -34,7 +39,6 @@ func create_powerUpShoot():
 	location.x = rand_range(2500,width)
 	location.y = rand_range(550,550)
 	powerup_heart.position = location
-	#print(location)
 	add_child(powerup_heart)
 	
 
@@ -43,8 +47,13 @@ func create_powerUpHeart():
 	location.x = rand_range(2500,width)
 	location.y = rand_range(550,550)
 	powerup_heart.position = location
-	print(location)
 	add_child(powerup_heart)
+	
+
+func create_location():
+	location.x = rand_range(width_init,width)
+	location.y = rand_range(1,hight)
+	return location
 	
 
 # Codigo funcional para 1 powerUp
@@ -58,6 +67,3 @@ func create_powerUpHeart():
 #		location.y = rand_range(1,hight)
 #		powerup.position = location
 #		add_child(powerup)
-		
-	
-	
