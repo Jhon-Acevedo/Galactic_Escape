@@ -55,7 +55,6 @@ func _physics_process(_delta):
 			pass
 			#take_damage()
 		
-		
 
 func _process(delta):
 	pass

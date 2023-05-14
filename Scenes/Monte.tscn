@@ -26,6 +26,8 @@ script = ExtResource( 3 )
 
 [node name="Engranaje" type="Sprite" parent="."]
 position = Vector2( 1332, 973 )
+rotation = 1.78948
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="Montana" type="Sprite" parent="."]
