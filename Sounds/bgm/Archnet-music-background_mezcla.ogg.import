@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Archnet-music-background_mezcla.ogg-0c56831b80697801286e5b5443a4fa23.oggstr"
+
+[deps]
+
+source_file="res://Sounds/bgm/Archnet-music-background_mezcla.ogg"
+dest_files=[ "res://.import/Archnet-music-background_mezcla.ogg-0c56831b80697801286e5b5443a4fa23.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/enemigo_destruido.ogg-a2f7d823c588dfd00d4955eaca3457a6.oggstr"
+
+[deps]
+
+source_file="res://Sounds/sfx/enemigo_destruido.ogg"
+dest_files=[ "res://.import/enemigo_destruido.ogg-a2f7d823c588dfd00d4955eaca3457a6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/music_backgound.mp3-e5c4020d2e885dbf736f87e73a61c953.mp3str"
+
+[deps]
+
+source_file="res://MyAssets/Sonidos/music_backgound.mp3"
+dest_files=[ "res://.import/music_backgound.mp3-e5c4020d2e885dbf736f87e73a61c953.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

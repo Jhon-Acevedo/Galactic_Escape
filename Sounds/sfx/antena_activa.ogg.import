@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/antena_activa.ogg-f7e1db6e598eeb1695297ac72d4ceb7b.oggstr"
+
+[deps]
+
+source_file="res://Sounds/sfx/antena_activa.ogg"
+dest_files=[ "res://.import/antena_activa.ogg-f7e1db6e598eeb1695297ac72d4ceb7b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

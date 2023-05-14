@@ -1,0 +1,221 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Scenes/GrupoEnemigos.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/EnemigoDirigido.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Monte.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Meta.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Personaje.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=6]
+[ext_resource path="res://Assets/fonts/Kubika Font/Kubika Rough.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/hud/vida.png" type="Texture" id=9]
+[ext_resource path="res://Assets/hud/barra_vida.png" type="Texture" id=10]
+[ext_resource path="res://Assets/fondo/fondo.jpg" type="Texture" id=11]
+[ext_resource path="res://Assets/fondo/tilemap.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/PowerUp.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/hud/tabla_puntos.png" type="Texture" id=14]
+[ext_resource path="res://Sounds/bgm/Archnet-music-background_mezcla.ogg" type="AudioStream" id=15]
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 90, 0, 90, 90, 0, 90 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 90, 0, 90, 90, 0, 90 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 90, 0, 90, 90, 0, 90 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 90, 0, 90, 90, 0, 90 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 90, 0, 90, 90, 0, 90 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 90, 0, 90, 90, 0, 90 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 0, 90, 0, 90, 90, 0, 90 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 0, 90, 0, 90, 90, 0, 90 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 0, 90, 0, 90, 90, 0, 90 )
+
+[sub_resource type="TileSet" id=12]
+0/name = "tilemap.png 0"
+0/texture = ExtResource( 12 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 270, 270 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 438, Vector2( 0, 2 ), 54, Vector2( 1, 0 ), 504, Vector2( 1, 1 ), 511, Vector2( 1, 2 ), 63, Vector2( 2, 0 ), 216, Vector2( 2, 1 ), 219, Vector2( 2, 2 ), 27 ]
+0/autotile/icon_coordinate = Vector2( 1, 1 )
+0/autotile/tile_size = Vector2( 90, 90 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 3 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+use_filter = true
+font_data = ExtResource( 7 )
+
+[node name="TemplateNivel" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 5760, 0 )
+
+[node name="Fondo" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 2880, 540 )
+texture = ExtResource( 11 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 960, 540 )
+current = true
+script = ExtResource( 6 )
+
+[node name="Personaje" parent="Camera2D" instance=ExtResource( 5 )]
+position = Vector2( -560, -21 )
+
+[node name="PowerUp" parent="." instance=ExtResource( 13 )]
+
+[node name="Enemigos" type="Node2D" parent="."]
+
+[node name="EnemigoDirigido" parent="Enemigos" instance=ExtResource( 2 )]
+position = Vector2( 2936, 98 )
+
+[node name="GrupoEnemigos" parent="Enemigos" instance=ExtResource( 1 )]
+position = Vector2( 1696, 52 )
+
+[node name="Meta" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3951, 685 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 12 )
+cell_size = Vector2( 90, 90 )
+format = 1
+tile_data = PoolIntArray( 393236, 0, 0, 393237, 0, 1, 393238, 0, 2, 458771, 0, 0, 458772, 0, 65537, 458773, 0, 65537, 458774, 0, 65538, 524307, 0, 65536, 524308, 0, 65537, 524309, 0, 65537, 524310, 0, 65538, 589842, 0, 0, 589843, 0, 65537, 589844, 0, 65537, 589845, 0, 65537, 589846, 0, 65538, 655378, 0, 65536, 655379, 0, 65537, 655380, 0, 65537, 655381, 0, 65537, 655382, 0, 65537, 655383, 0, 2, 720914, 0, 65536, 720915, 0, 65537, 720916, 0, 65537, 720917, 0, 65537, 720918, 0, 65537, 720919, 0, 65538, 786450, 0, 131072, 786451, 0, 131073, 786452, 0, 131073, 786453, 0, 131073, 786454, 0, 131073, 786455, 0, 131074 )
+
+[node name="Monte" parent="." instance=ExtResource( 3 )]
+
+[node name="HUD" type="CanvasLayer" parent="." groups=["hud"]]
+
+[node name="BarraVida" type="TextureRect" parent="HUD"]
+margin_left = 112.0
+margin_top = 51.0
+margin_right = 504.0
+margin_bottom = 152.0
+texture = ExtResource( 10 )
+
+[node name="Vida" type="TextureRect" parent="HUD/BarraVida"]
+margin_left = 148.0
+margin_top = 37.0
+margin_right = 215.0
+margin_bottom = 59.0
+texture = ExtResource( 9 )
+
+[node name="Vida2" type="TextureRect" parent="HUD/BarraVida"]
+margin_left = 226.0
+margin_top = 38.0
+margin_right = 293.0
+margin_bottom = 60.0
+texture = ExtResource( 9 )
+
+[node name="Vida3" type="TextureRect" parent="HUD/BarraVida"]
+margin_left = 304.0
+margin_top = 37.0
+margin_right = 371.0
+margin_bottom = 59.0
+texture = ExtResource( 9 )
+
+[node name="BarraPuntos" type="TextureRect" parent="HUD"]
+margin_left = 1524.0
+margin_top = 57.0
+margin_right = 1850.0
+margin_bottom = 158.0
+texture = ExtResource( 14 )
+
+[node name="Label" type="Label" parent="HUD/BarraPuntos"]
+margin_left = 132.0
+margin_top = 28.0
+margin_right = 249.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 2
+valign = 1
+clip_text = true
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+autoplay = true
+bus = "BGM"
