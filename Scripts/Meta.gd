@@ -3,9 +3,6 @@ extends AnimatedSprite
 export (String, FILE) var NextLevel
 onready var personaje = get_tree().get_nodes_in_group("personaje")[0]
 
-
-
-
 func cinematica():
 	Global.cinematica = true
 	var personaje_position = personaje.global_position

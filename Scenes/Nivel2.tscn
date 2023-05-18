@@ -8,12 +8,12 @@
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=6]
 [ext_resource path="res://Assets/fonts/Kubika Font/Kubika Rough.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Sounds/bgm/Archnet-music-background_mezcla.ogg" type="AudioStream" id=8]
-[ext_resource path="res://Assets/hud/vida.png" type="Texture" id=9]
-[ext_resource path="res://Assets/hud/barra_vida.png" type="Texture" id=10]
-[ext_resource path="res://Assets/fondo/fondo.jpg" type="Texture" id=11]
+[ext_resource path="res://MyAssets/UI/vida.png" type="Texture" id=9]
+[ext_resource path="res://MyAssets/Background2.png" type="Texture" id=10]
+[ext_resource path="res://MyAssets/UI/scoreD.png" type="Texture" id=11]
 [ext_resource path="res://Assets/fondo/tilemap.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/PowerUps/PowerUp.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Assets/hud/tabla_puntos.png" type="Texture" id=14]
+[ext_resource path="res://MyAssets/UI/Barravida.png" type="Texture" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 90, 0, 90, 90, 0, 90 )
@@ -135,8 +135,9 @@ font_data = ExtResource( 7 )
 motion_mirroring = Vector2( 5760, 0 )
 
 [node name="Fondo" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 2880, 540 )
-texture = ExtResource( 11 )
+position = Vector2( 2878.5, 540 )
+scale = Vector2( 3.00052, 1 )
+texture = ExtResource( 10 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 960, 540 )
@@ -180,6 +181,7 @@ position = Vector2( 11451, 774 )
 NextLevel = "res://Scenes/PantallaPrincipal.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource( 12 )
 cell_size = Vector2( 90, 90 )
 format = 1
@@ -190,43 +192,48 @@ tile_data = PoolIntArray( -65528, 0, 0, -65527, 0, 1, -65526, 0, 1, -65525, 0, 1
 [node name="BarraVida" type="TextureRect" parent="HUD"]
 margin_left = 112.0
 margin_top = 51.0
-margin_right = 504.0
-margin_bottom = 152.0
-texture = ExtResource( 10 )
+margin_right = 511.0
+margin_bottom = 148.0
+texture = ExtResource( 14 )
+expand = true
 
 [node name="Vida" type="TextureRect" parent="HUD/BarraVida"]
-margin_left = 148.0
+margin_left = 134.0
 margin_top = 37.0
-margin_right = 215.0
-margin_bottom = 59.0
+margin_right = 208.0
+margin_bottom = 56.0
 texture = ExtResource( 9 )
+expand = true
 
 [node name="Vida2" type="TextureRect" parent="HUD/BarraVida"]
-margin_left = 226.0
-margin_top = 38.0
-margin_right = 293.0
-margin_bottom = 60.0
+margin_left = 213.0
+margin_top = 37.0
+margin_right = 286.0
+margin_bottom = 56.0
 texture = ExtResource( 9 )
+expand = true
 
 [node name="Vida3" type="TextureRect" parent="HUD/BarraVida"]
-margin_left = 304.0
+margin_left = 293.0
 margin_top = 37.0
-margin_right = 371.0
-margin_bottom = 59.0
+margin_right = 364.0
+margin_bottom = 56.0
 texture = ExtResource( 9 )
+expand = true
 
 [node name="BarraPuntos" type="TextureRect" parent="HUD"]
-margin_left = 1524.0
-margin_top = 57.0
-margin_right = 1850.0
-margin_bottom = 158.0
-texture = ExtResource( 14 )
+margin_left = 1532.0
+margin_top = 37.0
+margin_right = 1899.0
+margin_bottom = 132.0
+texture = ExtResource( 11 )
+expand = true
 
 [node name="Label" type="Label" parent="HUD/BarraPuntos"]
-margin_left = 132.0
-margin_top = 28.0
-margin_right = 249.0
-margin_bottom = 68.0
+margin_left = 208.0
+margin_top = 26.0
+margin_right = 325.0
+margin_bottom = 66.0
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2

@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Scripts/Enemigo.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "PLAYER",
 "language": "GDScript",
 "path": "res://Scripts/Personaje.gd"
 } ]
 _global_script_class_icons={
+"Enemy": "",
 "PLAYER": ""
 }
 

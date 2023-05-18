@@ -6,7 +6,7 @@ var hight = 1080
 var location = Vector2()
 
 # Cantidad de powerUp en el nivel 1
-var amount_powerUp = 25
+var amount_powerUp = 5
 
 # Instancias de los powerUps
 var powerup_heart = preload("res://Scenes/PowerUps/FullVida.tscn").instance()
@@ -24,14 +24,15 @@ var _powerups = {
 # create_powerUpHeart(): Función para crear powerUp de vidas
 # create_powerUpShoot(): Función para crear powerUp de disparo triple
 func _ready():
+	var my_random = Global.linear_congruence(1,4,3,7,0,1,amount_powerUp)
 	randomize()
 	for i in range(amount_powerUp):
-		var random_num = randf()
+		var random_num = my_random[i][2]
 		if random_num <= _powerups.get("heart").get("Probability"):
 			create_powerUpHeart()
 		if random_num <= _powerups.get("shot_triple").get("Probability"):
 			create_powerUpShoot()
-			
+		print(random_num)
 
 
 func create_powerUpShoot():

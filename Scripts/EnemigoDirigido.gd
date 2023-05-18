@@ -15,15 +15,6 @@ func set_explosion():
 	yield($AnimatedSprite,"animation_finished")
 	queue_free()
 
-func random_walk():
-	var direction = Vector2(randf() * 2 - 1, randf() * 2 - 1)
-	direction = direction.normalized()
-	var speed = 50
-	velocidad = direction * speed
-
-
-var time_since_last_walk = 0.0
-var walk_duration = 1.0
 
 func _physics_process(delta):
 	if is_in_screen:
