@@ -1,8 +1,27 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/PantallaPrincipal.gd" type="Script" id=1]
-[ext_resource path="res://MyAssets/Fondo2.jpg" type="Texture" id=2]
-[ext_resource path="res://Assets/fonts/Presets/kubica.tres" type="DynamicFont" id=4]
+[ext_resource path="res://MyAssets/Fonts/Godot-Fontpack-master/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Black.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://MyAssets/Sonidos/start_music.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/ParallaxBack.tscn" type="PackedScene" id=4]
+[ext_resource path="res://MyAssets/new_backgroudn.jpg" type="Texture" id=5]
+[ext_resource path="res://MyAssets/UI/Buttons/PantallaPrincipal.tres" type="Theme" id=6]
+
+[sub_resource type="DynamicFont" id=2]
+size = 150
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 60
+font_data = ExtResource( 2 )
 
 [node name="PantallaPrincipal" type="Control"]
 anchor_right = 1.0
@@ -14,31 +33,70 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="BG" type="TextureRect" parent="Fondo"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 2 )
+margin_right = 3081.0
+margin_bottom = 2254.0
+texture = ExtResource( 5 )
 
-[node name="Menu" type="Control" parent="."]
+[node name="Sprite" type="Sprite" parent="Fondo"]
+visible = false
+position = Vector2( 922, 560 )
+scale = Vector2( 0.421516, 0.380324 )
+texture = ExtResource( 5 )
+
+[node name="Start_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -13.983
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 328.0
+margin_top = 115.0
+margin_right = 1629.0
+margin_bottom = 430.0
+custom_fonts/font = SubResource( 2 )
+text = "Galactic Space"
+
+[node name="Control" type="Control" parent="."]
+margin_left = 41.0
+margin_top = 432.0
+margin_right = 1899.0
+margin_bottom = 1052.0
+
+[node name="Play" type="Button" parent="Control"]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -197.5
-margin_top = -60.5
-margin_right = 197.5
-margin_bottom = 60.5
+anchor_bottom = 1.0
+margin_left = -229.0
+margin_top = -450.0
+margin_right = 221.0
+margin_bottom = -350.0
+theme = ExtResource( 6 )
+custom_fonts/font = SubResource( 3 )
+text = "PLAY"
 
-[node name="Jugar" type="Button" parent="Menu"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -80.0
-margin_top = 120.0
-margin_right = 92.0
-margin_bottom = 197.0
-custom_fonts/font = ExtResource( 4 )
-text = "JUGAR"
-flat = true
+[node name="Htp" type="Button" parent="Control"]
+margin_left = 702.0
+margin_top = 310.0
+margin_right = 1152.0
+margin_bottom = 410.0
+theme = ExtResource( 6 )
+custom_fonts/font = SubResource( 4 )
+text = "How To Play"
 
-[connection signal="pressed" from="Menu/Jugar" to="." method="_on_Jugar_pressed"]
+[node name="Quit" type="Button" parent="Control"]
+margin_left = 704.0
+margin_top = 448.0
+margin_right = 1154.0
+margin_bottom = 548.0
+theme = ExtResource( 6 )
+custom_fonts/font = SubResource( 5 )
+text = "Quit"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]
+
+[connection signal="pressed" from="Control/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Control/Quit" to="." method="_on_Quit_pressed"]

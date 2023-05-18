@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://MyAssets/new_backgroudn.jpg" type="Texture" id=1]
+[ext_resource path="res://Scripts/Home/Inicio.gd" type="Script" id=2]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource( 2 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 1000, 1000 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 1245, 593 )
+scale = Vector2( 0.902667, 0.982154 )
+texture = ExtResource( 1 )
