@@ -32,7 +32,7 @@ func _ready():
 			create_powerUpHeart()
 		if random_num <= _powerups.get("shot_triple").get("Probability"):
 			create_powerUpShoot()
-		print(random_num)
+#		print(random_num)
 
 
 func create_powerUpShoot():

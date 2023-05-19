@@ -136,7 +136,7 @@ size = 30
 use_filter = true
 font_data = ExtResource( 7 )
 
-[node name="TemplateNivel" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
