@@ -8,10 +8,10 @@
 [ext_resource path="res://Scenes/Monte.tscn" type="PackedScene" id=6]
 [ext_resource path="res://MyAssets/Background.jpg" type="Texture" id=7]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=8]
-[ext_resource path="res://MyAssets/UI/Barravida.png" type="Texture" id=9]
+[ext_resource path="res://MyAssets/UI/new_vida (2).png" type="Texture" id=9]
 [ext_resource path="res://Assets/hud/vida.png" type="Texture" id=10]
-[ext_resource path="res://Assets/fonts/Kubika Font/Kubika Rough.ttf" type="DynamicFontData" id=11]
-[ext_resource path="res://MyAssets/UI/scoreD.png" type="Texture" id=12]
+[ext_resource path="res://MyAssets/UI/score_b.png" type="Texture" id=11]
+[ext_resource path="res://MyAssets/Fonts/Godot-Fontpack-master/fonts/connection_ii/ConnectionII.otf" type="DynamicFontData" id=12]
 [ext_resource path="res://Assets/fondo/tilemap.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Meta.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scripts/Nivel1/Nivel1.gd" type="Script" id=15]
@@ -153,9 +153,9 @@ texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 67, 21 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 40
+size = 30
 use_filter = true
-font_data = ExtResource( 11 )
+font_data = ExtResource( 12 )
 
 [sub_resource type="ConvexPolygonShape2D" id=16]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -482,7 +482,7 @@ script = ExtResource( 15 )
 motion_mirroring = Vector2( 5760, 0 )
 
 [node name="Fondo" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 2870.5, 561.5 )
+position = Vector2( 2871, 562 )
 scale = Vector2( 3.00469, 1.03981 )
 texture = ExtResource( 7 )
 
@@ -546,6 +546,7 @@ position = Vector2( 12664, 685 )
 NextLevel = "res://Scenes/Nivel2.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource( 12 )
 cell_size = Vector2( 90, 90 )
 show_collision = true
@@ -575,34 +576,34 @@ position = Vector2( 10785, 56 )
 [node name="HUD" type="CanvasLayer" parent="." groups=["hud"]]
 
 [node name="BarraVida" type="TextureRect" parent="HUD"]
-margin_left = 44.0
-margin_top = 35.0
-margin_right = 421.0
-margin_bottom = 153.0
+margin_left = 22.0
+margin_top = 16.0
+margin_right = 490.0
+margin_bottom = 93.0
 texture = ExtResource( 9 )
 expand = true
 
 [node name="Vida" type="TextureRect" parent="HUD/BarraVida"]
-margin_left = 128.0
-margin_top = 46.0
-margin_right = 195.0
-margin_bottom = 68.0
+margin_left = 75.0
+margin_top = 23.0
+margin_right = 193.0
+margin_bottom = 52.0
 texture = ExtResource( 20 )
 expand = true
 
 [node name="Vida2" type="TextureRect" parent="HUD/BarraVida"]
-margin_left = 201.0
-margin_top = 46.0
-margin_right = 270.0
-margin_bottom = 68.0
+margin_left = 199.0
+margin_top = 23.0
+margin_right = 317.0
+margin_bottom = 52.0
 texture = ExtResource( 20 )
 expand = true
 
 [node name="Vida3" type="TextureRect" parent="HUD/BarraVida"]
-margin_left = 277.0
-margin_top = 46.0
-margin_right = 344.0
-margin_bottom = 68.0
+margin_left = 323.0
+margin_top = 23.0
+margin_right = 441.0
+margin_bottom = 52.0
 texture = ExtResource( 20 )
 expand = true
 
@@ -649,21 +650,35 @@ custom_styles/bg = SubResource( 14 )
 percent_visible = false
 
 [node name="BarraPuntos" type="TextureRect" parent="HUD"]
-margin_left = 1629.0
-margin_top = 24.0
-margin_right = 1923.0
-margin_bottom = 96.0
-texture = ExtResource( 12 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -326.0
+margin_top = -81.0
+margin_right = -11.0
+margin_bottom = -18.0
+texture = ExtResource( 11 )
 expand = true
 
 [node name="Label" type="Label" parent="HUD/BarraPuntos"]
-margin_left = 60.0
-margin_top = 7.0
-margin_right = 270.0
-margin_bottom = 65.0
+margin_left = 230.0
+margin_top = 6.0
+margin_right = 304.0
+margin_bottom = 64.0
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
+valign = 1
+clip_text = true
+
+[node name="Label2" type="Label" parent="HUD/BarraPuntos"]
+margin_left = 19.0
+margin_top = 6.0
+margin_right = 132.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 2 )
+text = "Score:"
 valign = 1
 clip_text = true
 
@@ -682,7 +697,6 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -6
 tile_set = SubResource( 15 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 852001, 1, 0, 852002, 2, 0, 917536, 1, 0, 917537, 20, 0, 917538, 19, 0, 917539, 2, 0, 917545, 15, 0, 917546, 16, 0, 983071, 1, 0, 983072, 20, 0, 983073, 0, 0, 983074, 0, 0, 983075, 19, 0, 983076, 2, 0, 1048606, 1, 0, 1048607, 20, 0, 1048608, 0, 0, 1048609, 0, 0, 1048610, 0, 0, 1048611, 0, 0, 1048612, 19, 0, 1048613, 2, 0 )
 
 [node name="Enemigo" parent="." instance=ExtResource( 16 )]
 position = Vector2( 2425, 253 )
