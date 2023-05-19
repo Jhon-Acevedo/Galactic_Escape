@@ -99,4 +99,5 @@ text = "Quit"
 [node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]
 
 [connection signal="pressed" from="Control/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Control/Htp" to="." method="_on_Htp_pressed"]
 [connection signal="pressed" from="Control/Quit" to="." method="_on_Quit_pressed"]
