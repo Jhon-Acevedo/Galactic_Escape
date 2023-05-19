@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/GrupoEnemigos.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/EnemigoDirigido.tscn" type="PackedScene" id=2]
@@ -6,14 +6,15 @@
 [ext_resource path="res://Scenes/Meta.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Personaje.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=6]
-[ext_resource path="res://Assets/fonts/Kubika Font/Kubika Rough.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://MyAssets/Fonts/Godot-Fontpack-master/fonts/connection_ii/ConnectionII.otf" type="DynamicFontData" id=7]
 [ext_resource path="res://Sounds/bgm/Archnet-music-background_mezcla.ogg" type="AudioStream" id=8]
 [ext_resource path="res://MyAssets/UI/vida.png" type="Texture" id=9]
 [ext_resource path="res://MyAssets/Background2.png" type="Texture" id=10]
-[ext_resource path="res://MyAssets/UI/scoreD.png" type="Texture" id=11]
+[ext_resource path="res://MyAssets/UI/score_b.png" type="Texture" id=11]
 [ext_resource path="res://Assets/fondo/tilemap.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/PowerUps/PowerUp.tscn" type="PackedScene" id=13]
-[ext_resource path="res://MyAssets/UI/Barravida.png" type="Texture" id=14]
+[ext_resource path="res://MyAssets/UI/new_vida (2).png" type="Texture" id=14]
+[ext_resource path="res://Assets/hud/vida.png" type="Texture" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 90, 0, 90, 90, 0, 90 )
@@ -122,8 +123,16 @@ points = PoolVector2Array( 0, 0, 90, 0, 90, 90, 0, 90 )
 } ]
 0/z_index = 0
 
-[sub_resource type="DynamicFont" id=2]
-size = 40
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 67, 21 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 67, 21 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 30
 use_filter = true
 font_data = ExtResource( 7 )
 
@@ -187,59 +196,6 @@ cell_size = Vector2( 90, 90 )
 format = 1
 tile_data = PoolIntArray( -65528, 0, 0, -65527, 0, 1, -65526, 0, 1, -65525, 0, 1, -65524, 0, 1, -65523, 0, 1, -65522, 0, 1, -65521, 0, 1, -65520, 0, 1, -65519, 0, 1, -65518, 0, 1, -65517, 0, 1, -65516, 0, 1, -65515, 0, 1, -65514, 0, 1, -65513, 0, 1, -65512, 0, 2, -65490, 0, 0, -65489, 0, 1, -65488, 0, 1, -65487, 0, 1, -65486, 0, 1, -65485, 0, 1, -65484, 0, 1, -65483, 0, 1, -65482, 0, 1, -65481, 0, 1, -65480, 0, 1, -65479, 0, 1, -65478, 0, 1, -65477, 0, 1, -65476, 0, 1, -65475, 0, 1, -65474, 0, 1, -65473, 0, 1, -65472, 0, 1, -65471, 0, 1, -65470, 0, 1, -65469, 0, 1, -65468, 0, 1, -65467, 0, 1, -65466, 0, 1, -65465, 0, 1, -65464, 0, 2, 8, 0, 131072, 9, 0, 131073, 10, 0, 131073, 11, 0, 131073, 12, 0, 131073, 13, 0, 131073, 14, 0, 131073, 15, 0, 131073, 16, 0, 131073, 17, 0, 131073, 18, 0, 65537, 19, 0, 65537, 20, 0, 65537, 21, 0, 65537, 22, 0, 65537, 23, 0, 65537, 24, 0, 65538, 46, 0, 131072, 47, 0, 131073, 48, 0, 131073, 49, 0, 131073, 50, 0, 131073, 51, 0, 131073, 52, 0, 65537, 53, 0, 65537, 54, 0, 65537, 55, 0, 131073, 56, 0, 131073, 57, 0, 131073, 58, 0, 131073, 59, 0, 131073, 60, 0, 65537, 61, 0, 65537, 62, 0, 65537, 63, 0, 65537, 64, 0, 65537, 65, 0, 65537, 66, 0, 131073, 67, 0, 131073, 68, 0, 131073, 69, 0, 131073, 70, 0, 131073, 71, 0, 65537, 72, 0, 65537, 73, 0, 1, 74, 0, 1, 75, 0, 1, 76, 0, 1, 77, 0, 1, 78, 0, 2, 85, 0, 0, 86, 0, 1, 87, 0, 2, 65554, 0, 131072, 65555, 0, 131073, 65556, 0, 131073, 65557, 0, 65537, 65558, 0, 65537, 65559, 0, 65537, 65560, 0, 65538, 65588, 0, 65536, 65589, 0, 65537, 65590, 0, 65538, 65596, 0, 131072, 65597, 0, 131073, 65598, 0, 65537, 65599, 0, 65537, 65600, 0, 65537, 65601, 0, 131074, 65607, 0, 65536, 65608, 0, 65537, 65609, 0, 65537, 65610, 0, 65537, 65611, 0, 65537, 65612, 0, 65537, 65613, 0, 65537, 65614, 0, 65538, 65621, 0, 65536, 65622, 0, 65537, 65623, 0, 65537, 65624, 0, 2, 131093, 0, 131072, 131094, 0, 65537, 131095, 0, 65537, 131096, 0, 65538, 131124, 0, 65536, 131125, 0, 65537, 131126, 0, 65538, 131134, 0, 131072, 131135, 0, 131073, 131136, 0, 131074, 131143, 0, 65536, 131144, 0, 65537, 131145, 0, 65537, 131146, 0, 65537, 131147, 0, 65537, 131148, 0, 65537, 131149, 0, 65537, 131150, 0, 131074, 131157, 0, 65536, 131158, 0, 65537, 131159, 0, 65537, 131160, 0, 65537, 131161, 0, 2, 196630, 0, 131072, 196631, 0, 131073, 196632, 0, 131074, 196660, 0, 65536, 196661, 0, 65537, 196662, 0, 131074, 196679, 0, 65536, 196680, 0, 65537, 196681, 0, 131073, 196682, 0, 131073, 196683, 0, 131073, 196684, 0, 131073, 196685, 0, 131074, 196693, 0, 131072, 196694, 0, 65537, 196695, 0, 65537, 196696, 0, 65537, 196697, 0, 131074, 262196, 0, 131072, 262197, 0, 131074, 262215, 0, 131072, 262216, 0, 131074, 262230, 0, 131072, 262231, 0, 131073, 262232, 0, 131074, 393278, 0, 0, 393279, 0, 1, 393280, 0, 2, 458814, 0, 65536, 458815, 0, 65537, 458816, 0, 65538, 524310, 0, 0, 524311, 0, 1, 524312, 0, 2, 524342, 0, 0, 524343, 0, 2, 524350, 0, 65536, 524351, 0, 65537, 524352, 0, 65538, 524359, 0, 0, 524360, 0, 2, 589845, 0, 0, 589846, 0, 65537, 589847, 0, 65537, 589848, 0, 65538, 589875, 0, 0, 589876, 0, 1, 589877, 0, 1, 589878, 0, 65537, 589879, 0, 65538, 589886, 0, 65536, 589887, 0, 65537, 589888, 0, 65538, 589895, 0, 65536, 589896, 0, 65537, 589897, 0, 2, 655378, 0, 0, 655379, 0, 1, 655380, 0, 1, 655381, 0, 65537, 655382, 0, 65537, 655383, 0, 65537, 655384, 0, 65538, 655411, 0, 65536, 655412, 0, 65537, 655413, 0, 65537, 655414, 0, 65537, 655415, 0, 65538, 655422, 0, 65536, 655423, 0, 65537, 655424, 0, 65538, 655431, 0, 65536, 655432, 0, 65537, 655433, 0, 65538, 655446, 0, 0, 655447, 0, 1, 655448, 0, 1, 655449, 0, 2, 720914, 0, 65536, 720915, 0, 65537, 720916, 0, 65537, 720917, 0, 65537, 720918, 0, 65537, 720919, 0, 65537, 720920, 0, 65538, 720936, 0, 0, 720937, 0, 1, 720938, 0, 1, 720939, 0, 1, 720940, 0, 1, 720941, 0, 1, 720942, 0, 1, 720943, 0, 1, 720944, 0, 1, 720945, 0, 1, 720946, 0, 1, 720947, 0, 65537, 720948, 0, 65537, 720949, 0, 65537, 720950, 0, 65537, 720951, 0, 65537, 720952, 0, 1, 720953, 0, 1, 720954, 0, 1, 720955, 0, 1, 720956, 0, 1, 720957, 0, 1, 720958, 0, 65537, 720959, 0, 65537, 720960, 0, 65537, 720961, 0, 1, 720962, 0, 1, 720963, 0, 1, 720964, 0, 1, 720965, 0, 1, 720966, 0, 1, 720967, 0, 65537, 720968, 0, 65537, 720969, 0, 65537, 720970, 0, 1, 720971, 0, 1, 720972, 0, 1, 720973, 0, 1, 720974, 0, 1, 720975, 0, 1, 720976, 0, 1, 720977, 0, 1, 720978, 0, 1, 720979, 0, 1, 720980, 0, 1, 720981, 0, 1, 720982, 0, 65537, 720983, 0, 65537, 720984, 0, 65537, 720985, 0, 65538, 786450, 0, 131072, 786451, 0, 131073, 786452, 0, 131073, 786453, 0, 131073, 786454, 0, 131073, 786455, 0, 131073, 786456, 0, 131074, 786472, 0, 131072, 786473, 0, 131073, 786474, 0, 131073, 786475, 0, 131073, 786476, 0, 131073, 786477, 0, 131073, 786478, 0, 131073, 786479, 0, 131073, 786480, 0, 131073, 786481, 0, 131073, 786482, 0, 131073, 786483, 0, 131073, 786484, 0, 131073, 786485, 0, 131073, 786486, 0, 131073, 786487, 0, 131073, 786488, 0, 131073, 786489, 0, 131073, 786490, 0, 131073, 786491, 0, 131073, 786492, 0, 131073, 786493, 0, 131073, 786494, 0, 131073, 786495, 0, 131073, 786496, 0, 131073, 786497, 0, 131073, 786498, 0, 131073, 786499, 0, 131073, 786500, 0, 131073, 786501, 0, 131073, 786502, 0, 131073, 786503, 0, 131073, 786504, 0, 131073, 786505, 0, 131073, 786506, 0, 131073, 786507, 0, 131073, 786508, 0, 131073, 786509, 0, 131073, 786510, 0, 131073, 786511, 0, 131073, 786512, 0, 131073, 786513, 0, 131073, 786514, 0, 131073, 786515, 0, 131073, 786516, 0, 131073, 786517, 0, 131073, 786518, 0, 131073, 786519, 0, 131073, 786520, 0, 131073, 786521, 0, 131074 )
 
-[node name="HUD" type="CanvasLayer" parent="." groups=["hud"]]
-
-[node name="BarraVida" type="TextureRect" parent="HUD"]
-margin_left = 112.0
-margin_top = 51.0
-margin_right = 511.0
-margin_bottom = 148.0
-texture = ExtResource( 14 )
-expand = true
-
-[node name="Vida" type="TextureRect" parent="HUD/BarraVida"]
-margin_left = 134.0
-margin_top = 37.0
-margin_right = 208.0
-margin_bottom = 56.0
-texture = ExtResource( 9 )
-expand = true
-
-[node name="Vida2" type="TextureRect" parent="HUD/BarraVida"]
-margin_left = 213.0
-margin_top = 37.0
-margin_right = 286.0
-margin_bottom = 56.0
-texture = ExtResource( 9 )
-expand = true
-
-[node name="Vida3" type="TextureRect" parent="HUD/BarraVida"]
-margin_left = 293.0
-margin_top = 37.0
-margin_right = 364.0
-margin_bottom = 56.0
-texture = ExtResource( 9 )
-expand = true
-
-[node name="BarraPuntos" type="TextureRect" parent="HUD"]
-margin_left = 1532.0
-margin_top = 37.0
-margin_right = 1899.0
-margin_bottom = 132.0
-texture = ExtResource( 11 )
-expand = true
-
-[node name="Label" type="Label" parent="HUD/BarraPuntos"]
-margin_left = 208.0
-margin_top = 26.0
-margin_right = 325.0
-margin_bottom = 66.0
-custom_fonts/font = SubResource( 2 )
-text = "0"
-align = 2
-valign = 1
-clip_text = true
-
 [node name="PowerUp" parent="." instance=ExtResource( 13 )]
 position = Vector2( 7371, 126 )
 
@@ -252,3 +208,112 @@ position = Vector2( 8526, 3 )
 stream = ExtResource( 8 )
 autoplay = true
 bus = "BGM"
+
+[node name="HUD" type="CanvasLayer" parent="." groups=["hud"]]
+
+[node name="BarraVida" type="TextureRect" parent="HUD"]
+margin_left = 22.0
+margin_top = 16.0
+margin_right = 490.0
+margin_bottom = 93.0
+texture = ExtResource( 14 )
+expand = true
+
+[node name="Vida" type="TextureRect" parent="HUD/BarraVida"]
+margin_left = 75.0
+margin_top = 23.0
+margin_right = 193.0
+margin_bottom = 52.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="Vida2" type="TextureRect" parent="HUD/BarraVida"]
+margin_left = 199.0
+margin_top = 23.0
+margin_right = 317.0
+margin_bottom = 52.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="Vida3" type="TextureRect" parent="HUD/BarraVida"]
+margin_left = 323.0
+margin_top = 23.0
+margin_right = 441.0
+margin_bottom = 52.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="1" type="ProgressBar" parent="HUD/BarraVida"]
+visible = false
+anchor_left = 0.661
+anchor_top = 0.48
+anchor_right = 0.661
+anchor_bottom = 0.5
+margin_left = -111.112
+margin_top = -12.48
+margin_right = -43.112
+margin_bottom = 8.5
+custom_styles/fg = SubResource( 13 )
+custom_styles/bg = SubResource( 14 )
+percent_visible = false
+
+[node name="2" type="ProgressBar" parent="HUD/BarraVida"]
+visible = false
+anchor_left = 0.661
+anchor_top = 0.48
+anchor_right = 0.661
+anchor_bottom = 0.5
+margin_left = -34.112
+margin_top = -11.48
+margin_right = 33.888
+margin_bottom = 9.5
+custom_styles/fg = SubResource( 13 )
+custom_styles/bg = SubResource( 14 )
+percent_visible = false
+
+[node name="3" type="ProgressBar" parent="HUD/BarraVida"]
+visible = false
+anchor_left = 0.855
+anchor_top = 0.48
+anchor_right = 0.864
+anchor_bottom = 0.5
+margin_left = -34.16
+margin_top = -12.48
+margin_right = 30.312
+margin_bottom = 8.5
+custom_styles/fg = SubResource( 13 )
+custom_styles/bg = SubResource( 14 )
+percent_visible = false
+
+[node name="BarraPuntos" type="TextureRect" parent="HUD"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -326.0
+margin_top = -81.0
+margin_right = -11.0
+margin_bottom = -18.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="Label" type="Label" parent="HUD/BarraPuntos"]
+margin_left = 230.0
+margin_top = 6.0
+margin_right = 304.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 15 )
+text = "0"
+align = 2
+valign = 1
+clip_text = true
+
+[node name="Label2" type="Label" parent="HUD/BarraPuntos"]
+margin_left = 19.0
+margin_top = 6.0
+margin_right = 132.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 15 )
+text = "Score:"
+valign = 1
+clip_text = true
