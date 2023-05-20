@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/background-lv1.mp3-c5ec4acf050c753920ce97fbbdc4943e.mp3str"
+
+[deps]
+
+source_file="res://MyAssets/Sonidos/background-lv1.mp3"
+dest_files=[ "res://.import/background-lv1.mp3-c5ec4acf050c753920ce97fbbdc4943e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
