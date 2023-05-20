@@ -5,12 +5,14 @@ export (int) var velocidad = 600
 
 onready var Disparo = preload("res://Scenes/Disparo.tscn")
 onready var DisparoEspecial = preload("res://Scenes/DisparoEspecial.tscn")
+onready var DisparoDoble = preload("res://Scenes/DoubleShoot.tscn")
 onready var HUD = get_tree().get_nodes_in_group("hud")[0]
 onready var playback = $AnimationTree.get("parameters/playback")
 
 var movimiento = Vector2(0,0)
 var cooldown = true
 var powerup = false
+var isTripleShoot = false
 
 func _ready():
 	Global.vidas = 3
@@ -40,7 +42,10 @@ func disparar():
 		$AudioStreamPlayer.play()
 		var instancia_disparo 
 		if powerup:
-			instancia_disparo = DisparoEspecial.instance()
+			if isTripleShoot:
+				instancia_disparo = DisparoEspecial.instance()
+			else:
+				instancia_disparo = DisparoDoble.instance()
 		else:
 			instancia_disparo = Disparo.instance()
 		instancia_disparo.global_position = $DisparoPos.global_position

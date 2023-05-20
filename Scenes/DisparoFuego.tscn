@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/disparo/disparo.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Disparo.gd" type="Script" id=2]
-[ext_resource path="res://MyAssets/Shot_p/shot_p.png" type="Texture" id=3]
+[ext_resource path="res://MyAssets/Shot_p/efecto_fuego_00035.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -54,25 +54,25 @@ height = 27.0373
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 5.5, 8 )
 
-[node name="Disparo" type="RigidBody2D"]
+[node name="DisparoFuego" type="RigidBody2D"]
 mode = 2
 gravity_scale = 0.0
 linear_velocity = Vector2( 1500, 0 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 19.5, -0.999997 )
-scale = Vector2( 1.28906, 0.96875 )
+position = Vector2( -11.1582, -1 )
+scale = Vector2( 0.198342, 0.170139 )
 texture = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 8 )
 animation = "disparo"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -1, 0 )
 rotation = 1.56358
 shape = SubResource( 9 )
