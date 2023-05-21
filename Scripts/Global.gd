@@ -5,6 +5,14 @@ var vidas = 3
 var cinematica = false
 var LabelPuntos 
 
+var vidaBoss = 1000
+
+func remove_vida_boss():
+	vidaBoss -= 10 
+	
+func get_vida_boss():
+	return vidaBoss
+
 func remove_vida():
 	if vidas > 1:
 		vidas -= 1
@@ -18,6 +26,10 @@ func add_vida():
 func add_puntos(valor):
 	puntos += valor
 	LabelPuntos.text = String(puntos)
+	
+	
+func get_vida():
+	return vidas
 	
 # Funtion for create numbers pseudorandom "Linear Congruence"
 func linear_congruence(my_x0, k, my_c, g, minium, maximum, iterations):

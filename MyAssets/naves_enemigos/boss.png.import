@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon-arkanet-2.png-442b673f7367661ccae0afd3a37e7d36.stex"
+path="res://.import/boss.png-05557230e68449657ba11644e37aea28.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon-arkanet-2.png"
-dest_files=[ "res://.import/icon-arkanet-2.png-442b673f7367661ccae0afd3a37e7d36.stex" ]
+source_file="res://MyAssets/naves_enemigos/boss.png"
+dest_files=[ "res://.import/boss.png-05557230e68449657ba11644e37aea28.stex" ]
 
 [params]
 

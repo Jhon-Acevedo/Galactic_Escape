@@ -268,7 +268,7 @@ tracks/4/keys = {
 "values": [ 0, 1 ]
 }
 
-[node name="Personaje" type="KinematicBody2D" groups=["personaje"]]
+[node name="Personaje" type="KinematicBody2D" groups=["personaje", "player"]]
 position = Vector2( -18, 2 )
 script = ExtResource( 1 )
 

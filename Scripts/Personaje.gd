@@ -87,6 +87,8 @@ func _on_Area2D_area_entered(area):
 	if area.is_in_group("enemigo"):
 		take_damage()
 		area.set_explosion()
+	if area.is_in_group("bullet_enemy"):
+		take_damage()
 	pass # Replace with function body.
 
 
