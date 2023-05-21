@@ -66,7 +66,6 @@ texture = ExtResource( 2 )
 visible = false
 frames = SubResource( 8 )
 animation = "disparo"
-frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

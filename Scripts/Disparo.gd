@@ -21,45 +21,22 @@ func _on_Area2D_body_entered(body):
 	if body.get_class() == "TileMap":
 		queue_free()
 
-
 var velocidad_inicial = 100  # La velocidad inicial del disparo
-var angulo_disparo = 60# El ángulo del disparo en grados
-var gravedad = 500 # Magnitud de la fuerza de gravedad
-
+var angulo_disparo = 60  # El ángulo del disparo en grados
+var gravedad = 500# Magnitud de la fuerza de gravedad
 var velocidad = Vector2.ZERO
 
-
 # https://calculadoradefisica.online/es/movimiento-parabolico.html 
-#func _physics_process(delta):
-#	if Input.is_action_just_pressed("attack"):
-#		var radianes = deg2rad(angulo_disparo)
-#		var direccion = Vector2(cos(radianes), sin(radianes))
-#		velocidad = direccion * velocidad_inicial
-##		print(velocidad)
-#		var timepo_vuelo = (2*velocidad_inicial) * sin(radianes) / gravedad
-#		var altura_maxima = (pow(velocidad_inicial,2) * pow(sin(radianes),2)) / (2*gravedad)
-##		print(timepo_vuelo)
-##		print(altura_maxima)
-#
-#	velocidad.y += gravedad * delta  # Aplicar la fuerza de gravedad
-#	print(velocidad.y)
-#	apply_central_impulse(velocidad * delta)
-	
-#	print(velocidad)
-#	print(delta)
-#	print(velocidad.normalized())  # Normalizado para obtener solo la dire
-
-
-
-#var velocidad_inicial = 100  # La velocidad inicial del disparo
-#var angulo_disparo = 60  # El ángulo del disparo en grados
-#
-#func _physics_process(delta):
-#	if Input.is_action_just_pressed("attack"):
-#		var radianes = deg2rad(angulo_disparo)
-#		var direccion = Vector2(cos(radianes), sin(radianes))
-#		var fuerza = direccion * velocidad_inicial
-##		apply_impulse(Vector2(), fuerza)
-#		add_force(Vector2(), fuerza)
-#		print(fuerza)
-#		print(direccion)
+func _physics_process(delta):
+	if Global.is_level3(): 
+		if Input.is_action_just_pressed("attack"):
+			var radianes = deg2rad(angulo_disparo)
+			var direccion = Vector2(cos(radianes), sin(radianes))
+			velocidad = direccion * velocidad_inicial
+			var timepo_vuelo = (2*velocidad_inicial) * sin(radianes) / gravedad
+			var altura_maxima = (pow(velocidad_inicial,2) * pow(sin(radianes),2)) / (2*gravedad)
+			print(velocidad)
+			print(timepo_vuelo)
+			print(altura_maxima)
+		velocidad.y += gravedad * delta  # Aplicar la fuerza de gravedad
+		apply_central_impulse(velocidad * delta)

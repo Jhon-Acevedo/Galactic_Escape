@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Personaje.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MyAssets/f.jpg" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://MyAssets/Tiles/MyTileMap.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/Nivel1/ParallaxBackground.gd" type="Script" id=10]
 [ext_resource path="res://MyAssets/Sonidos/background-lv3.mp3" type="AudioStream" id=11]
+[ext_resource path="res://Scripts/Nivel3/Nivel3.gd" type="Script" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 38
@@ -133,6 +134,7 @@ points = PoolVector2Array( 0, 0, 90, 0, 90, 90, 0, 90 )
 0/z_index = 0
 
 [node name="Level3" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 script = ExtResource( 10 )

@@ -26,6 +26,7 @@ func _ready():
 			create_powerUpDoubleShoot()	
 		elif random_num > _powerups.get("shot_triple").get("Range")[0]:
 			create_powerUpShoot()	
+		print(my_random[i][2])
 
 # create_powerUpShoot(): Función para crear powerUp de disparo triple
 func create_powerUpShoot():

@@ -20,11 +20,15 @@ func _physics_process(delta):
 	velocidad.y += gravedad * delta  # Aplicar la fuerza de gravedad
 	apply_central_impulse(velocidad * delta)
 
-
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("enemigo"):
 		Global.add_puntos(area.puntos)
 		area.set_explosion()
+		queue_free()
+	if area.is_in_group("boss"):
+		Global.remove_vida_boss()
+		Global.add_puntos(20)
+		area.take_damage()
 		queue_free()
 	pass # Replace with function body.
 

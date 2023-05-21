@@ -6,9 +6,18 @@ var cinematica = false
 var LabelPuntos 
 
 var vidaBoss = 1000
+var isLevel3 = false
+
+func is_level3():
+	return isLevel3
+
+func change_level(value):
+	isLevel3 = value
 
 func remove_vida_boss():
 	vidaBoss -= 10 
+	if vidaBoss <= 0:
+		get_tree().change_scene("res://Scenes/PantallaPrincipal.tscn")
 	
 func get_vida_boss():
 	return vidaBoss
@@ -17,9 +26,8 @@ func remove_vida():
 	if vidas > 1:
 		vidas -= 1
 	else: 
-		get_tree().reload_current_scene()
-		
-		
+		get_tree().change_scene("res://Scenes/GameOver.tscn")
+
 func add_vida():
 	vidas = 3
 	
