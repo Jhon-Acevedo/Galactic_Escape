@@ -2,7 +2,7 @@ extends Area2D
 
 onready var line_2D = $Line2D
 
-var trail_lenght = 5
+var trail_lenght = 10
 var point = Vector2()
 var speed : float
 

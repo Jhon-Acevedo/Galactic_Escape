@@ -10,7 +10,7 @@
 [ext_resource path="res://Scenes/Boss/shooting.tscn" type="PackedScene" id=8]
 [ext_resource path="res://MyAssets/Tiles/MyTileMap.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/Nivel1/ParallaxBackground.gd" type="Script" id=10]
-[ext_resource path="res://MyAssets/Sonidos/background-lv2.mp3" type="AudioStream" id=11]
+[ext_resource path="res://MyAssets/Sonidos/background-lv3.mp3" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 38

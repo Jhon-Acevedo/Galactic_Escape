@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/fondo/antena.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Meta.gd" type="Script" id=2]
-[ext_resource path="res://Sounds/sfx/antena_activa.ogg" type="AudioStream" id=3]
+[ext_resource path="res://MyAssets/Sonidos/Mission_complete.mp3" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
