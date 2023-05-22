@@ -8,7 +8,6 @@ var hight_min = 600
 
 # Cantidad de powerUps en el nivel
 var amount_powerUp = 2
-
 # Probabilidad de que cada powerUp aparezca
 var _powerups = {
 	"heart": {"Probability":0.15, "Range": [0, 0.15]},
