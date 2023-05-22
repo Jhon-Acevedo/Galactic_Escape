@@ -28,7 +28,7 @@ _global_script_class_icons={
 
 config/name="Galatic Escape"
 run/main_scene="res://Scenes/PantallaPrincipal.tscn"
-config/icon="res://icon-arkanet.png"
+config/icon="res://Galactic.ico"
 
 [autoload]
 

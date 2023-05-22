@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/credits.mp3-0498df5084cf1fd1233ee6bf359eede5.mp3str"
+
+[deps]
+
+source_file="res://MyAssets/Sonidos/credits.mp3"
+dest_files=[ "res://.import/credits.mp3-0498df5084cf1fd1233ee6bf359eede5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

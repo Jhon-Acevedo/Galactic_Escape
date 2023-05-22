@@ -1,0 +1,92 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/disparo/disparo.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Disparo.gd" type="Script" id=2]
+[ext_resource path="res://MyAssets/Shot_p/efecto_fuego_00035.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 60, 28 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 60, 0, 60, 28 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 120, 0, 60, 28 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 180, 0, 60, 28 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 240, 0, 60, 28 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 300, 0, 60, 28 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 360, 0, 60, 28 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "disparo",
+"speed": 30.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 5.48806
+height = 27.0373
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 5.5, 8 )
+
+[node name="DisparoFuego" type="RigidBody2D"]
+mode = 2
+gravity_scale = 0.0
+linear_velocity = Vector2( 1500, 0 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -11.1582, -1 )
+scale = Vector2( 0.198342, 0.170139 )
+texture = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 8 )
+animation = "disparo"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -1, 0 )
+rotation = 1.56358
+shape = SubResource( 9 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+self_modulate = Color( 0.0431373, 0.886275, 0.176471, 1 )
+position = Vector2( 23, 0 )
+shape = SubResource( 10 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -12, 0 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

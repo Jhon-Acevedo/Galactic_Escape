@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/laser-3.mp3-8a85be1c67a0f6fd01a4f7b6a51bf71d.mp3str"
+
+[deps]
+
+source_file="res://MyAssets/Sonidos/laser-3.mp3"
+dest_files=[ "res://.import/laser-3.mp3-8a85be1c67a0f6fd01a4f7b6a51bf71d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

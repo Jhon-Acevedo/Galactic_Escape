@@ -5,19 +5,47 @@ var vidas = 3
 var cinematica = false
 var LabelPuntos 
 
+var vidaBoss = 1000
+var isLevel3 = false
+
+func is_level3():
+	return isLevel3
+
+func change_level(value):
+	isLevel3 = value
+
+func get_vidaBoss():
+	return vidaBoss
+
+func remove_vida_boss():
+	vidaBoss -= 10 
+	if vidaBoss <= 0:
+		puntos = 0
+		isLevel3 = false
+		get_tree().change_scene("res://Scenes/Credits.tscn")
+	
+func get_vida_boss():
+	return vidaBoss
+
 func remove_vida():
 	if vidas > 1:
 		vidas -= 1
 	else: 
-		get_tree().reload_current_scene()
-		
-		
+		puntos = 0
+		isLevel3 = false
+		get_tree().change_scene("res://Scenes/GameOver.tscn")
+
 func add_vida():
 	vidas = 3
+
 	
 func add_puntos(valor):
 	puntos += valor
 	LabelPuntos.text = String(puntos)
+	
+
+func get_vida():
+	return vidas
 	
 # Funtion for create numbers pseudorandom "Linear Congruence"
 func linear_congruence(my_x0, k, my_c, g, minium, maximum, iterations):

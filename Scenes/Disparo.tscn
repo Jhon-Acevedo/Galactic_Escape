@@ -61,14 +61,15 @@ linear_velocity = Vector2( 1500, 0 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 20.5, -1 )
-scale = Vector2( 1.11719, 0.75 )
+position = Vector2( 19.5, -0.999997 )
+scale = Vector2( 1.28906, 0.96875 )
 texture = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 8 )
 animation = "disparo"
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
