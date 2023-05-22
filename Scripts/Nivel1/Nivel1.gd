@@ -1,8 +1,10 @@
 extends Node2D
 
-var width = 9000
-var width_init = 4000
+var width = 18501
+var width_init = 2500
 var hight = 1080
+var hight_max = 500
+var hight_min = 600
 
 # Cantidad de powerUps en el nivel
 var amount_powerUp = 5
@@ -17,6 +19,7 @@ var _powerups = {
 # amount_powerUp: Cantidad de power que se van a crear
 # random_num: Número pseudoaletorio distribución normal 
 func _ready():
+	randomize()
 	var my_random = Global.linear_congruence(1,4,3,7,0,1,amount_powerUp)
 	for i in range(amount_powerUp):
 		var random_num = my_random[i][2]
@@ -26,14 +29,15 @@ func _ready():
 			create_powerUpDoubleShoot()	
 		elif random_num > _powerups.get("shot_triple").get("Range")[0]:
 			create_powerUpShoot()	
-		print(my_random[i][2])
+#		print(my_random[i][2])
 
 # create_powerUpShoot(): Función para crear powerUp de disparo triple
 func create_powerUpShoot():
 	var powerup_heart = preload("res://Scenes/PowerUps/PowerUp.tscn").instance()
 	var location = Vector2()
-	location.x = rand_range(2500,width)
-	location.y = rand_range(550,550)
+	location.x = rand_range(width_init,width)
+	location.y = rand_range(hight_min,hight_max)
+	print(location)
 	powerup_heart.position = location
 	add_child(powerup_heart)
 
@@ -41,8 +45,9 @@ func create_powerUpShoot():
 func create_powerUpDoubleShoot():
 	var powerup_heart = preload("res://Scenes/PowerUps/DoubleShoot.tscn").instance()
 	var location = Vector2()
-	location.x = rand_range(2500,width)
-	location.y = rand_range(550,550)
+	location.x = rand_range(width_init,width)
+	location.y = rand_range(hight_min,hight_max)
+	print(location)
 	powerup_heart.position = location
 	add_child(powerup_heart)
 
@@ -50,8 +55,9 @@ func create_powerUpDoubleShoot():
 func create_powerUpHeart():
 	var powerup_heart = preload("res://Scenes/PowerUps/FullVida.tscn").instance()
 	var location = Vector2()
-	location.x = rand_range(2500,width)
-	location.y = rand_range(550,550)
+	location.x = rand_range(width_init,width)
+	location.y = rand_range(hight_min,hight_max)
+	print(location)
 	powerup_heart.position = location
 	add_child(powerup_heart)
 	
@@ -59,6 +65,6 @@ func create_powerUpHeart():
 func create_location():
 	var location = Vector2()
 	location.x = rand_range(width_init,width)
-	location.y = rand_range(1,hight)
+	location.y = rand_range(hight_min,hight_max)
 	return location
 	
