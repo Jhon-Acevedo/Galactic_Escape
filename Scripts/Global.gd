@@ -14,10 +14,15 @@ func is_level3():
 func change_level(value):
 	isLevel3 = value
 
+func get_vidaBoss():
+	return vidaBoss
+
 func remove_vida_boss():
 	vidaBoss -= 10 
 	if vidaBoss <= 0:
-		get_tree().change_scene("res://Scenes/PantallaPrincipal.tscn")
+		puntos = 0
+		isLevel3 = false
+		get_tree().change_scene("res://Scenes/Credits.tscn")
 	
 func get_vida_boss():
 	return vidaBoss
@@ -26,16 +31,19 @@ func remove_vida():
 	if vidas > 1:
 		vidas -= 1
 	else: 
+		puntos = 0
+		isLevel3 = false
 		get_tree().change_scene("res://Scenes/GameOver.tscn")
 
 func add_vida():
 	vidas = 3
+
 	
 func add_puntos(valor):
 	puntos += valor
 	LabelPuntos.text = String(puntos)
 	
-	
+
 func get_vida():
 	return vidas
 	

@@ -11,19 +11,16 @@ func _on_Area2D_area_entered(area):
 		area.take_damage()
 		queue_free()
 
-
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
-	pass # Replace with function body.
-
 
 func _on_Area2D_body_entered(body):
 	if body.get_class() == "TileMap":
 		queue_free()
 
 var velocidad_inicial = 100  # La velocidad inicial del disparo
-var angulo_disparo = 60  # El ángulo del disparo en grados
-var gravedad = 500# Magnitud de la fuerza de gravedad
+var angulo_disparo = 45  # El ángulo del disparo en grados
+var gravedad = 10000# Magnitud de la fuerza de gravedad
 var velocidad = Vector2.ZERO
 
 # https://calculadoradefisica.online/es/movimiento-parabolico.html 
@@ -35,8 +32,8 @@ func _physics_process(delta):
 			velocidad = direccion * velocidad_inicial
 			var timepo_vuelo = (2*velocidad_inicial) * sin(radianes) / gravedad
 			var altura_maxima = (pow(velocidad_inicial,2) * pow(sin(radianes),2)) / (2*gravedad)
-			print(velocidad)
-			print(timepo_vuelo)
-			print(altura_maxima)
+#			print(velocidad)
+#			print(timepo_vuelo)
+#			print(altura_maxima)
 		velocidad.y += gravedad * delta  # Aplicar la fuerza de gravedad
 		apply_central_impulse(velocidad * delta)
