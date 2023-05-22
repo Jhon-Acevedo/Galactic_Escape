@@ -32,8 +32,8 @@ func _physics_process(delta):
 			velocidad = direccion * velocidad_inicial
 			var timepo_vuelo = (2*velocidad_inicial) * sin(radianes) / gravedad
 			var altura_maxima = (pow(velocidad_inicial,2) * pow(sin(radianes),2)) / (2*gravedad)
-#			print(velocidad)
-#			print(timepo_vuelo)
-#			print(altura_maxima)
+			print("Velocidad: ",velocidad)
+			print("Tiempo de vuelo: ",timepo_vuelo)
+			print("Altura Maxima: ",altura_maxima)
 		velocidad.y += gravedad * delta  # Aplicar la fuerza de gravedad
 		apply_central_impulse(velocidad * delta)
