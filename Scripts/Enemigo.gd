@@ -7,7 +7,6 @@ export (int) var puntos = 50
 var velocity = Vector2.ZERO
 var speed = 100
 
-
 func _physics_process(delta):
 	if velocity == Vector2.ZERO:
 		generate_random_velocity()
